@@ -9,8 +9,8 @@ const conexion = mysql.createConnection({
   database: process.env.DB
 });
 
-conexion.connect((err)=>{
-  if(err){
+conexion.connect((err) => {
+  if (err) {
     console.error(`Error de conexión: ${err}`);
     return;
   }
