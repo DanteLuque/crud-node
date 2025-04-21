@@ -19,7 +19,7 @@
     <main>
       <section class="container mt-3">
         <div class="card-header">
-          <a href="./create" class="btn btn-sm btn-primary">Registrar</a>
+          <a href="/create" class="btn btn-sm btn-primary">Registrar</a>
         </div>
         <div class="card-body">
           <table class="table table-sm table-striped">
@@ -40,10 +40,12 @@
                 <td><%= vehiculo.MARCA %></td>
                 <td><%= vehiculo.COLOR %></td>
                 <td>
-                  <a href="./edit/<%=vehiculo.ID%>" class="btn btn-sm btn-info"
+                  <a href="/edit/<%=vehiculo.ID%>" class="btn btn-sm btn-info"
                     >Editar</a
                   >
-                  <a href="./delete" class="btn btn-sm btn-danger">Eliminar</a>
+                  <a href="/delete/<%=vehiculo.ID%>" 
+                    onclick=" return confirmAction('eliminar')"
+                    class="btn btn-sm btn-danger">Eliminar</a>
                 </td>
               </tr>
               <% }) %>
@@ -59,5 +61,6 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/utils/confirm.js"></script>
   </body>
 </html>

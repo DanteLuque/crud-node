@@ -18,14 +18,25 @@
 
     <main>
       <section class="container mt-3">
-        <form action="/save" method="post" autocomplete="off">
+        <form
+          action="/create"
+          method="post"
+          autocomplete="off"
+          id="formulario-registro"
+        >
           <div class="card">
             <div class="card-header">
               <a href="./" class="btn btn-sm btn-primary">Mostar lista</a>
             </div>
             <div class="card-body">
               <div class="mb-3 form-floating">
-                <input type="text" class="form-control" name="tipo" id="tipo" />
+                <input
+                  type="text"
+                  class="form-control"
+                  name="tipo"
+                  id="tipo"
+                  required
+                />
                 <label for="form-label">Tipo</label>
               </div>
               <div class="mb-3 form-floating">
@@ -34,6 +45,7 @@
                   class="form-control"
                   name="color"
                   id="color"
+                  required
                 />
                 <label for="form-label">Color</label>
               </div>
@@ -49,7 +61,11 @@
               </select>
             </div>
             <div class="card-footer">
-              <button class="btn btn-sm btn-primary" type="submit">
+              <button
+                class="btn btn-sm btn-primary"
+                onclick=" return confirmAction('guardar')"
+                type="submit"
+              >
                 Guardar
               </button>
               <a href="/" class="btn btn-sm btn-secondary">Cancelar</a>
@@ -68,5 +84,6 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/utils/confirm.js"></script>
   </body>
 </html>

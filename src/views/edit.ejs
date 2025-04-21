@@ -1,9 +1,91 @@
-<h1>Editar</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <title>Editar</title>
+  </head>
+  <body>
+    <header>
+      <nav></nav>
+    </header>
 
-<h2><%= dev %></h2>
+    <main>
+      <section class="container mt-3">
+        <form
+          action="/edit<%=vehiculo.ID%>"
+          method="post"
+          autocomplete="off"
+          id="formulario-registro"
+        >
+          <div class="card">
+            <div class="card-header">
+              <a href="./" class="btn btn-sm btn-primary">Mostar lista</a>
+            </div>
+            <div class="card-body">
+              <div class="mb-3 form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="tipo"
+                  id="tipo"
+                  value="<%=vehiculo.TIPO%>"
+                  required
+                />
+                <label for="form-label">Tipo</label>
+              </div>
+              <div class="mb-3 form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="color"
+                  id="color"
+                  value="<%=vehiculo.COLOR%>"
+                  required
+                />
+                <label for="form-label">Color</label>
+              </div>
+              <select
+                class="form-select form-select-lg mb-3"
+                aria-label=".form-select-lg example"
+                id="marca"
+                name="marca"
+              >
+                <option value="kia" <%=vehiculo.MARCA=='kia' ? 'selected': '' %> >kia</option>
+                <option value="Toyota" <%=vehiculo.MARCA=='Toyota' ? 'selected': ''%> >Toyota</option>
+                <option value="Hyundai" <%=vehiculo.MARCA=='Hyundai' ? 'selected': ''%> >Hyundai</option>
+              </select>
+            </div>
+            <div class="card-footer">
+              <button
+                class="btn btn-sm btn-primary"
+                onclick=" return confirmAction('actualizar')"
+                type="submit"
+              >
+                Actualizar
+              </button>
+              <a href="/" class="btn btn-sm btn-secondary">Cancelar</a>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
 
-<ul>
-  <% friends.forEach(friends => { %>
-      <li><%= friends %></li>
-    <% }) %>
-</ul>
+    <footer>
+      <p></p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/utils/confirm.js"></script>
+  </body>
+</html>
